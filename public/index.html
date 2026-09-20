@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Developer Registration | Node.js API</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f4f6f9;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+width:350px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+.message{
+margin-top:15px;
+text-align:center;
+font-size:14px;
+}
+
+.success{
+color:green;
+}
+
+.error{
+color:red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>User Registration</h2>
+
+<form id="registerForm">
+
+<input type="text" id="name" placeholder="Enter Name" required>
+
+<input type="email" id="email" placeholder="Enter Email" required>
+
+<input type="password" id="password" placeholder="Enter Password" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+<div id="message" class="message"></div>
+
+</div>
+
+<script>
+
+const form = document.getElementById("registerForm");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", async (e)=>{
+
+e.preventDefault();
+
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+
+try{
+
+const response = await fetch("/api/auth/register",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({name,email,password})
+
+});
+
+const data = await response.json();
+
+if(data.success){
+
+message.textContent = data.message;
+message.className = "message success";
+
+form.reset();
+
+}else{
+
+message.textContent = data.message;
+message.className = "message error";
+
+}
+
+}catch(error){
+
+message.textContent="Unable to reach the server. Please try again.";
+message.className="message error";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
