@@ -5,7 +5,7 @@
 ### A secure, production-minded user registration service built with Express and MongoDB
 
 <p>
-  <img src="https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white" alt="Node.js 18+">
+  <img src="https://img.shields.io/badge/Node.js-20.19%2B-339933?logo=node.js&logoColor=white" alt="Node.js 20.19+">
   <img src="https://img.shields.io/badge/Express-5-000000?logo=express&logoColor=white" alt="Express 5">
   <img src="https://img.shields.io/badge/MongoDB-Mongoose-47A248?logo=mongodb&logoColor=white" alt="MongoDB with Mongoose">
   <img src="https://img.shields.io/badge/Tests-Node.js%20%7C%20Supertest-1f6feb" alt="Node.js and Supertest">
@@ -51,7 +51,7 @@ The codebase is intentionally small enough to understand quickly while following
 
 | Layer | Technology |
 | --- | --- |
-| Runtime | Node.js 18+ |
+| Runtime | Node.js 20.19+ |
 | Web framework | Express 5 |
 | Database | MongoDB |
 | ODM | Mongoose |
@@ -65,7 +65,7 @@ The codebase is intentionally small enough to understand quickly while following
 
 ### Prerequisites
 
-- Node.js 18 or newer
+- Node.js 20.19.0 or newer
 - npm
 - MongoDB running locally or a MongoDB connection string
 
@@ -315,4 +315,3 @@ Alternatively, change `PORT` in `.env` and open the matching URL.
 ## 📄 License
 
 This project is available under the ISC license specified in `package.json`.
-
