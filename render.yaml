@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: nodejs-mongodb-webapp
+    runtime: node
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false

@@ -2,11 +2,12 @@ const connectDB = require("./config/db");
 const createApp = require("./app");
 
 const PORT = process.env.PORT || 3000;
+const HOST = "0.0.0.0";
 const app = createApp();
 
 const startServer = async () => {
   await connectDB();
-  const server = app.listen(PORT, () => {
+  const server = app.listen(PORT, HOST, () => {
     console.log(`Server running on port ${PORT}`);
   });
 
