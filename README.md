@@ -302,16 +302,6 @@ Get-NetTCPConnection -LocalPort 3000
 
 Alternatively, change `PORT` in `.env` and open the matching URL.
 
-## ☁️ Deploy to Render
-
-This repository includes a `render.yaml` Blueprint for deploying the Node.js service.
-
-Before deploying, create a MongoDB Atlas cluster and allow Render to connect to it. Do not use the local development value:
-
-```env
-MONGO_URI=mongodb://127.0.0.1:27017/nodejs-webapp
-```
-
 ## 📌 Future improvements
 
 - Login and JWT-based authentication
